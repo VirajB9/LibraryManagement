@@ -15,6 +15,15 @@ def get_book_by_id(db: Session, book_id: int):
 def create_book(db: Session, data: dict):
     book = Book(**data)
     book = crud.create_book(db, book)
+
+
+    #buisness logic : feature-X
+    #Create Anime ONLY if genre is  "X"
+    if data.get("genre") == "X":
+        anime = Anime(title=f"{book.title} Anime",
+                     genre="X",
+                     book_id = book.id)
+        crud.create_anime(db, anime)
     return book
 
 

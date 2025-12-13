@@ -27,7 +27,6 @@ class Anime(Base):
     author = Column(String, nullable=True)
     genre = Column(String, nullable=True)
     studio = Column(String, nullable=True)
-    genre = Column(String, nullable=True)
     episodes = Column(Integer, nullable=True)
     ongoing = Column(Boolean, default=True)
 
