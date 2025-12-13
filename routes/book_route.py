@@ -16,6 +16,7 @@ def single_book(book_id: int,db = Depends(get_db)):
     else:
         return {"error": "Book not found"}
 
+#API not giving response correctly
 @book_router.post("/", summary="Create a new book")
 def add_book(data: dict,db = Depends(get_db)):
     try:
